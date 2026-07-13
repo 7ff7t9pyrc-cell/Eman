@@ -1,0 +1,115 @@
+message.style.opacity = 0;
+
+setTimeout(()=>{
+
+message.innerHTML = messages[index];
+
+message.style.opacity = 1;
+
+},250);
+
+index++;
+
+}else{
+
+card.style.display = "none";
+
+secret.style.display = "block";
+
+}
+
+};
+
+restart.onclick = () =>{
+
+location.reload();
+
+};
+
+/* ==========================
+   Stars
+========================== */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+const star = document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*2+"s";
+
+stars.appendChild(star);
+
+}
+
+/* ==========================
+   Floating Hearts
+========================== */
+
+const hearts=document.getElementById("hearts");
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(16+Math.random()*18)+"px";
+
+heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},11000);
+
+},450);
+
+/* ==========================
+   Optional Music
+========================== */
+
+/*
+
+لو هتضيف أغنية
+
+ضيف داخل الـ body قبل script
+
+<audio id="music" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+ثم احذف التعليق من السطور التالية
+
+const music=document.getElementById("music");
+
+start.onclick=()=>{
+
+music.play();
+
+...
+
+}
+
+*/
+
+</script>
+
+</body>
+
+</html>
